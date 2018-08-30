@@ -1,8 +1,6 @@
 package lab2stringprocessing;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
 /**
  *
  * @author Tyheem Washington
@@ -15,7 +13,7 @@ static String[] records;
     public static void main(String[] args) {
  records = new String[100];
       try {
-      java.io.File  read = new java.io.File(args[0]); // Set up Scanner scn to read file “likely.txt”      
+      java.io.File  read = new java.io.File(args[0]);      
       java.util.Scanner  toy= new java.util.Scanner( read );
         int currentIndex = 0;    
         while(toy.hasNext()){
@@ -27,8 +25,8 @@ static String[] records;
             String phoneNumber = line[4];
             String email = line[5];
 
-            records[currentIndex] = String.format("");
-             
+            records[currentIndex] = String.format("%-20s%-20s%-10s%-10s%-20s%-10s",firstName,lastName,age,gender,phoneNumber,email);
+             System.out.println(records[currentIndex]);
             currentIndex++;
     // TODO code application logic here
     }
